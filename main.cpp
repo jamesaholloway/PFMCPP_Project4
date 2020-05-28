@@ -42,7 +42,92 @@ send me a DM to check your pull request
  */
 
 #include <iostream>
+
+struct FloatType {
+
+        float add( float lhs, float rhs ) {
+            return lhs + rhs;
+        }
+        float subtract(float  lhs,float rhs ) {
+            return lhs - rhs;
+        }
+
+         float multiply(float  lhs, float rhs ) {
+            return lhs * rhs;
+         }
+        float divide( float lhs, float rhs ) {
+            if(rhs == 0.f ) {
+              std::cout << "Warning: Divide by zero" << std::endl;  
+            }
+            return lhs / rhs;
+        }
+};
+
+struct DoubleType {
+        double add( double lhs, double rhs ) {
+            return lhs + rhs;
+        }
+        double subtract(double  lhs,double rhs ) {
+            return lhs - rhs;
+        }
+
+         double multiply(double  lhs, double rhs ) {
+            return lhs * rhs;
+         }
+        double divide( double lhs, double rhs ) {
+            if(rhs == 0.0 ) {
+            std::cout << "Warning: Divide by zero" << std::endl;  
+            }
+            return lhs / rhs;
+        }
+
+};
+
+struct IntType {
+        int add( int lhs, int rhs ) {
+            return lhs + rhs;
+        }
+        int subtract(int  lhs,int rhs ) {
+            return lhs - rhs;
+        }
+
+         int multiply(int  lhs, int rhs ) {
+            return lhs * rhs;
+         }
+        int divide( int lhs, int rhs ) {
+            if(rhs == 0 ) {
+            std::cout << "Error: Divide by zero" << std::endl;  
+            return 0;
+            }
+            return lhs / rhs;
+        }
+};
+
 int main()
 {
+    FloatType ft1;
+    auto result1 = ft1.add(3.2f, 23.f );
+    std::cout << "result of ft.add(): " << result1 << std::endl;    
+
+    FloatType ft2;
+    auto result2 = ft2.divide(5.0f, 0.0f);
+    std::cout << "result of ft.divide(): " << result2 << std::endl;
+
+    DoubleType dt1;
+    auto result3 = dt1.subtract(10.0, 6.0);
+    std::cout << "result of dt.subtract(): " << result3 << std::endl;
+
+    DoubleType dt2;
+    auto result4 = dt2.divide(10.0, 0.0);
+    std::cout << "result of dt.divide(): " << result4 << std::endl;
+
+    IntType it1;
+    auto result5 = it1.multiply(5, 300);
+    std::cout << "result of it.multiply(): " << result5 << std::endl;
+
+    IntType it2;
+    auto result6 = it2.divide(5, 0);
+    std::cout << "result of it.divide(): " << result6 << std::endl;
+
     std::cout << "good to go!" << std::endl;
 }
